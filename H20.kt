@@ -18,17 +18,26 @@ fun writeCsvSimple(fileName: String) {
     File(fileName).writeText(inputOfUser.joinToString("\n"))
 }
 
+fun checkInputInt() {
+
+}
+
 var fluidTracker = 0
 
 fun welcome() {
-    println("Welcome to the H20 Tracker. Written by Elisa Aldridge.")
+    println("Welcome to the H20 Tracker.")
 
     while (true) {
         println("Would you like to enter water consumption details? y/n")
         var userInput = readLine()
         if (userInput == "y") {
             println("Please enter the amout of fluid you consumed in Ounces:")
-            var inputOunces = readLine()!!.toInt()
+            var inputOunces = readLine()!!.toIntOrNull()
+            //println(inputOunces)
+            if (inputOunces == null) {
+                println("You have not entered a Fluid Number Value. Please try again.\n")
+                continue
+            }
             fluidTracker += inputOunces
             println("You have consumed $fluidTracker Ounces\n")
 
