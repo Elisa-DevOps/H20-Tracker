@@ -26,7 +26,7 @@ fun validateFluidInput(inputOunces: String?) : Int? {
 
 var fluidTracker = 0
 
-fun welcome() {
+fun processFluidConsumption() {
     while (true) {
         println("Would you like to enter water consumption details? y/n")
         var userInput = readLine()
@@ -73,7 +73,7 @@ fun welcome() {
 fun main() {
     println("Welcome to the H20 Tracker.")
     //inputOfUser.add("9,2:54")
-    welcome()
+    processFluidConsumption()
     writeCsvSimple("water.csv")
     readCsvSimple("water.csv")
 
