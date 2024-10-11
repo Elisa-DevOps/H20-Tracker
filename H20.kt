@@ -1,12 +1,6 @@
-//Project: H20 Tracker
+//Project: H20/ Fluid Intake Tracker
 //Purpose: Tracking Water Consumption
 //Author: Elisa Aldridge
-
-/*class H20 (val amount: Int) {
-    fun waterEntry = mutableMapOf<Int, List<String>>() {
-        
-    }
-}*/
 
 import java.io.File
 
@@ -21,9 +15,6 @@ fun readCsvSimple(fileName: String) {
 var inputOfUser = mutableListOf("Ounces,Time,Lat,Long")
 
 fun writeCsvSimple(fileName: String) {
-    /*inputOfUser = mutableListOf(
-        "8, 13:52"
-    )*/
     File(fileName).writeText(inputOfUser.joinToString("\n"))
 }
 
@@ -79,8 +70,6 @@ fun welcome() {
 }
 
 fun main() {
-    //writeCsvSimple("water.csv")
-    //readCsvSimple("water.csv")
     //inputOfUser.add("9,2:54")
     welcome()
     writeCsvSimple("water.csv")
