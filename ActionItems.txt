@@ -1,0 +1,8 @@
+//Author: Elisa Aldridge
+//Purpose of ActionItems.txt: List of ActionItems to implement/ correct/ reorganize/ cleanup in H20.kt
+
+//Clean up Comments
+//Create classes
+//Reduce redundant functions
+//Checks on userInputs such as Lat/Long parameters
+//Cap timeframe for tracking 24hr vs calendar Day
