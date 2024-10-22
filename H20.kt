@@ -20,7 +20,6 @@ fun writeCsvSimple(fileName: String) {
 
 fun validateFluidInput(inputOunces: String?) : Int? {
     //println("$inputOunces")
-    println("You have not entered a Fluid Number Value. Please try again.\n")
     return inputOunces!!.toIntOrNull()   //!!non-null string, converts to int or throws null
 }
 
@@ -36,8 +35,10 @@ fun processFluidConsumption() {
             var intOunces = validateFluidInput(inputOunces)     //sends user inputOunces to function validateFluidInput
             
             if (intOunces == null) {                        //if null returned from validateFluidInput, start at while
-                continue
-            }
+                println()
+                println("You have not entered a Fluid Number Value. Please try again.\n")
+                processFluidConsumption()
+            } else {
 
             fluidTracker += intOunces
             println("You have consumed $fluidTracker Ounces\n")
@@ -58,8 +59,11 @@ fun processFluidConsumption() {
 
             fluidTracker += intOunces
             println("You have consumed a total of $fluidTracker Ounces")
+            }
+
         } else if (userInput == "n" || userInput == "N") {
             println("You selected no\n")
+            println("You consumed a total of ${fluidTracker} Ounces of fluid")
             println("Goodbye")
             break
         } else {
@@ -76,5 +80,4 @@ fun main() {
     processFluidConsumption()
     writeCsvSimple("water.csv")
     readCsvSimple("water.csv")
-
 }
